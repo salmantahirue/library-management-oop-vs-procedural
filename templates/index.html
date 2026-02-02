@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python OOP Tutorial - Library Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Python OOP Tutorial</h1>
+            <h2>Library Management System</h2>
+            <p class="subtitle">Learn the difference between Procedural/Functional and Object-Oriented Programming</p>
+        </header>
+
+        <!-- Problem Statement Section -->
+        <section id="problem-section" class="section">
+            <div class="card">
+                <h2>Problem Statement</h2>
+                <div id="problem-content">
+                    <p>Loading problem statement...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Approach Selection -->
+        <section id="approach-section" class="section">
+            <div class="card">
+                <h2>Choose Your Learning Path</h2>
+                <div class="button-group">
+                    <button id="procedural-btn" class="approach-btn">
+                        <span class="btn-icon">📝</span>
+                        <span class="btn-title">Procedural/Functional</span>
+                        <span class="btn-desc">Learn the traditional approach</span>
+                    </button>
+                    <button id="oop-btn" class="approach-btn">
+                        <span class="btn-icon">🎯</span>
+                        <span class="btn-title">Object-Oriented</span>
+                        <span class="btn-desc">Learn the OOP approach</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tutorial Steps Section -->
+        <section id="tutorial-section" class="section" style="display: none;">
+            <div class="card">
+                <h2 id="tutorial-title">Tutorial Steps</h2>
+                <div id="steps-container"></div>
+            </div>
+        </section>
+
+        <!-- Interactive Library Management -->
+        <section id="interactive-section" class="section" style="display: none;">
+            <div class="card">
+                <h2>Interactive Library Management</h2>
+                
+                <!-- Tabs -->
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="books">📖 Books</button>
+                    <button class="tab-btn" data-tab="members">👥 Members</button>
+                    <button class="tab-btn" data-tab="operations">⚙️ Operations</button>
+                </div>
+
+                <!-- Books Tab -->
+                <div id="books-tab" class="tab-content active">
+                    <h3>Manage Books</h3>
+                    <div class="form-group">
+                        <input type="text" id="book-title" placeholder="Book Title">
+                        <input type="text" id="book-author" placeholder="Author">
+                        <input type="text" id="book-isbn" placeholder="ISBN">
+                        <button onclick="addBook()" class="action-btn">Add Book</button>
+                    </div>
+                    <div id="books-list" class="list-container"></div>
+                </div>
+
+                <!-- Members Tab -->
+                <div id="members-tab" class="tab-content">
+                    <h3>Manage Members</h3>
+                    <div class="form-group">
+                        <input type="text" id="member-name" placeholder="Member Name">
+                        <input type="text" id="member-id" placeholder="Member ID">
+                        <button onclick="addMember()" class="action-btn">Add Member</button>
+                    </div>
+                    <div id="members-list" class="list-container"></div>
+                </div>
+
+                <!-- Operations Tab -->
+                <div id="operations-tab" class="tab-content">
+                    <h3>Borrow/Return Books</h3>
+                    <div class="form-group">
+                        <input type="text" id="borrow-member-id" placeholder="Member ID">
+                        <input type="text" id="borrow-isbn" placeholder="Book ISBN">
+                        <button onclick="borrowBook()" class="action-btn">Borrow Book</button>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="return-member-id" placeholder="Member ID">
+                        <input type="text" id="return-isbn" placeholder="Book ISBN">
+                        <button onclick="returnBook()" class="action-btn">Return Book</button>
+                    </div>
+                    <div id="operations-messages" class="messages"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Limitations Section -->
+        <section id="limitations-section" class="section" style="display: none;">
+            <div class="card">
+                <h2 id="limitations-title">Limitations & Solutions</h2>
+                <div id="limitations-content"></div>
+            </div>
+        </section>
+
+        <!-- Code Comparison Section -->
+        <section id="code-section" class="section" style="display: none;">
+            <div class="card">
+                <h2>Code Comparison</h2>
+                <div class="code-tabs">
+                    <button class="code-tab-btn active" data-code="procedural">Procedural Code</button>
+                    <button class="code-tab-btn" data-code="oop">OOP Code</button>
+                </div>
+                <div id="code-content" class="code-container"></div>
+            </div>
+        </section>
+
+        <!-- Reset Button -->
+        <div class="reset-section">
+            <button onclick="resetLibrary()" class="reset-btn">🔄 Reset Library</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
